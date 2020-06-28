@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SPR</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="index.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <div class='header'>
+        Pawel's GitHub Browser
+    </div>
+    <div id='search-box-container' class='search-box-container'>
+        <label class='search-box-title'>Find your GitHub repo</label>
+        <div id='search'>
+            <form class='center' id='search-form'>
+                <input id='search-box-input' type='text' name='search' placeholder='Repo owner' class='search-box'>
+                <button id='findButton' class='search-button'>
+                    Search
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <table class='table' id='output-table'>
+        <thead>
+            <tr>
+                <th>Repo name</th>
+                <th>Description</th>
+                <th>Last updated</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody id='table-body'>
+            
+        </tbody>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='index.js'></script>
+</body>
+
+</html>

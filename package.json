@@ -1,0 +1,17 @@
+{
+  "name": "sp_recr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "moment": "2.27.0",
+    "parcel-bundler": "1.12.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "author": "Pawel Wojslaw",
+  "license": "ISC"
+}
