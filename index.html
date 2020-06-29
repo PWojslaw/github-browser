@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <link rel="stylesheet" href="index.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet/less" type="text/css" href="index.less" />
 
     <div class='header'>
         Pawel's GitHub Browser
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <table class='table' id='output-table'>
+    <table class='table' id='output-table' class='output-table'>
         <thead>
             <tr>
                 <th>Repo name</th>
@@ -35,13 +35,12 @@
                 <th>Link</th>
             </tr>
         </thead>
-        <tbody id='table-body'>
-            
-        </tbody>
+        <tbody id='table-body'></tbody>
     </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js"></script>
     <script src='index.ts'></script>
 </body>
 
