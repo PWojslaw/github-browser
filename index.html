@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>SPR</title>
 </head>
 
 <body>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet/less" type="text/css" href="index.less" />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+    <link rel='stylesheet/less' type='text/css' href='index.less' />
 
     <div class='header'>
         Pawel's GitHub Browser
@@ -18,7 +18,20 @@
         <label class='search-box-title'>Find your GitHub repo</label>
         <div id='search'>
             <form class='center' id='search-form'>
-                <input id='search-box-input' type='text' name='search' placeholder='Repo owner' class='search-box'>
+                <div class='form-group'>
+                    <input id='search-box-input' type='text' name='search' placeholder='Repo owner' class='search-box'>
+                </div>
+                <div class='form-check form-check-inline' id='sortby-input'>
+                    Sort By:
+                    <input class='form-check-input ml-2' type='radio' name='sortby' value='repoName' checked>
+                    <label class='form-check-label'>
+                        Repo name
+                    </label>
+                    <input class='form-check-input' type='radio' name='sortby' value='latest'>
+                    <label class='form-check-label'>
+                        Latest update
+                    </label>
+                </div>
                 <button id='findButton' class='search-button'>
                     Search
                 </button>
@@ -38,9 +51,9 @@
         <tbody id='table-body'></tbody>
     </table>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js'></script>
     <script src='index.ts'></script>
 </body>
 

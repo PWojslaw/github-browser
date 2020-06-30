@@ -4,7 +4,13 @@ import moment from 'moment';
 const searchForm = document.getElementById('search-form');
 const searchBox = document.getElementById('search-box-input') as HTMLInputElement;
 const searchBoxContainer = document.getElementById('search-box-container');
+const sortbyInput = document.getElementById('sortby-input');
 const github = new Github();
+
+enum SortValue {
+    latest = 'latest',
+    name = 'repoName'
+};
 
 searchForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -14,11 +20,15 @@ searchForm.addEventListener('submit', e => {
         return;
     }
     
+    const sortBy = (document.querySelector('input[name="sortby"]:checked') as HTMLInputElement).value === 'repoName'
+        ? SortValue.name
+        : SortValue.latest;
+
     github.search(searchBox.value).then(result => {
         if (!result || result.length === 0) {
             showError('Repo of provided name does not exist');
         }
-        populateResult(result);
+        populateResult(result, sortBy);
     });
     searchBox.value = '';
 });
@@ -34,9 +44,15 @@ function showError(message: string): void {
     }, 1500);
 }
 
-function populateResult(dtos: IGithubResponseDTO[]): void {
+function populateResult(dtos: IGithubResponseDTO[], sortBy: SortValue): void {
     const tableBody = document.getElementById('table-body') as HTMLTableElement;
     tableBody.innerHTML = '';
+
+    if (sortBy === SortValue.latest) {
+        dtos.sort((a, b) =>  (a.lastUpdated < b.lastUpdated) ? 1 : -1);
+    } else {
+        dtos.sort((a, b) =>  (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : -1);
+    }
     
     dtos.forEach(dto => {
         const newRow = tableBody.insertRow();
