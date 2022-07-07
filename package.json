@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "moment": "2.27.0",
+    "moment": "2.29.4",
     "parcel-bundler": "1.12.4"
   },
   "devDependencies": {
